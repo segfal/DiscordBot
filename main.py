@@ -23,7 +23,7 @@ async def on_ready():
             break
         await channel.send(Get_Jobs[i])
         i += 1
-        time.sleep(259200)
+    time.sleep(259200)
     '''
     while i < 5:
         await channel.send(Get_Jobs[i])
