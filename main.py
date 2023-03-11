@@ -3,24 +3,28 @@
 import os
 import discord
 from discord.ext import commands
+from jobs import Get_Jobs
+import time
+import datetime as dt
 
 
-intents = discord.Intents.default()
-intents.message_content = True
-bot = commands.Bot(command_prefix='!', intents=intents)
+client = discord.Client(intents=discord.Intents.default())
 
 
-@bot.event
+#print(os.environ.get('TOKEN'))
+
+@client.event
 async def on_ready():
-    print(f"Logged in as {bot.user}")
+    channel = client.get_channel(1071975520385904720)
+    i = 0
+    #send 5 jobs every 3 days
+    while i < 5:
+        await channel.send(Get_Jobs[i])
+        i += 1
+        time.sleep(259200)
+    
+    
+    
 
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
+client.run(os.environ["DISCORD_TOKEN"])
 
-@bot.command()
-async def hello(ctx):
-    await ctx.send("Choo choo! 🚅")
-
-
-bot.run(os.environ["DISCORD_TOKEN"])
