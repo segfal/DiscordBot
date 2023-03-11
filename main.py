@@ -19,7 +19,7 @@ async def on_ready():
     i = 0
     #send 5 jobs every 3 days
     for i in range(len(Get_Jobs)):
-        jobstring = f"**{Get_Jobs[i]['title']}**\n{Get_Jobs[i]['company']}\n{Get_Jobs[i]['location']}\n{Get_Jobs[i]['link']}"
+        jobstring = f"Title:{Get_Jobs[i]['title']}\nCompany:{Get_Jobs[i]['company']}\nLocation:{Get_Jobs[i]['location']}\nLink:{Get_Jobs[i]['link']}"
         if i > 5:
             break
         await channel.send(Get_Jobs[i])
