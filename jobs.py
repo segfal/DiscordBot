@@ -42,7 +42,7 @@ def get_jobs():
         jobs.append(job)
     return jobs
 
-#print(get_jobs())
 
 
 Get_Jobs = get_jobs()
+print(Get_Jobs)

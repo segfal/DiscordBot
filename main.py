@@ -7,7 +7,7 @@ from jobs import Get_Jobs
 import time
 import datetime as dt
 
-
+print(Get_Jobs)
 client = discord.Client(intents=discord.Intents.default())
 
 
@@ -18,11 +18,18 @@ async def on_ready():
     channel = client.get_channel(1071975520385904720)
     i = 0
     #send 5 jobs every 3 days
+    for i in range(len(Get_Jobs)):
+        if i > 5:
+            break
+        await channel.send(Get_Jobs[i])
+        i += 1
+        time.sleep(259200)
+    '''
     while i < 5:
         await channel.send(Get_Jobs[i])
         i += 1
         time.sleep(259200)
-    
+    '''
     
     
 
