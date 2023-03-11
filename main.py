@@ -22,7 +22,7 @@ async def on_ready():
         jobstring = f"Title:{Get_Jobs[i]['title']}\nCompany:{Get_Jobs[i]['company']}\nLocation:{Get_Jobs[i]['location']}\nLink:{Get_Jobs[i]['link']}"
         if i > 5:
             break
-        await channel.send(Get_Jobs[i])
+        await channel.send(jobstring)
         i += 1
     time.sleep(259200)
     '''
