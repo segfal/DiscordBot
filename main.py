@@ -24,6 +24,7 @@ async def on_ready():
             break
         await channel.send(jobstring)
         i += 1
+        time.sleep(3)
     time.sleep(259200)
     '''
     while i < 5:
